@@ -1,0 +1,32 @@
+name: do something exciting
+on: [push]
+jobs:
+  build::
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v3
+      - name: run other repo
+        uses: .gavinswilson/reponame@main #change to market place later?
+        
+      # - name: Set-up Python
+      #   uses: actions/setup-python@v4
+      #   with: 
+      #     python-version: '3.10'
+      # - name: Install Dependancies
+      #   run: |
+      #     python -m pip install --upgrade pip
+      #     pip install pyyaml
+      # # - name: Run Feed Generator
+      #   run: python feed.py
+      # - name: push repo
+      #   run: |
+      #     git config user.name git-hub-actions
+      #     git config user.email gav@gav
+      #     git add .
+      #     git commit -m "modified feed"
+      #     git push
+          
+        
+remember to set permissions for the repo to allow write access for the actions user
+this will run a python script and push back to the repo

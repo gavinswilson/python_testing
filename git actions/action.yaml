@@ -1,0 +1,19 @@
+name: "did stuff"
+author: "me"
+description: "did stuff"
+runs:
+  using: docker
+  image: "Dockerfile"
+branding:
+  icon: "git-branch"
+  color: "red"
+
+inputs:
+  email: 
+    description: "email to use for git config"
+    required: true
+    default: ${{ github.actor }}@localhost
+  name:
+    description: "name to use for git config"
+    required: true
+    default: ${{ github.actor }}

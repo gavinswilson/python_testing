@@ -1,19 +1,24 @@
-def my_decorator(func):
+from typing import Callable, TypeVar, Any
+
+F = TypeVar("F", bound=Callable[..., Any])
+
+def my_decorator(func: F) -> F:
     """
     A simple decorator that prints a message before and after the execution of the function.
     """
 
-    def wrapper(*args, **kwargs):
+    def wrapper(*args: Any, **kwargs: Any):
         print("Before the function execution.")
         result = func(*args, **kwargs)
         print("After the function execution.")
         return result
 
-    return wrapper
+    from typing import cast
+    return cast(F, wrapper)
 
 
 @my_decorator
-def say_hello(name):
+def say_hello(name: str):
     """
     A simple function that greets the user.
     """

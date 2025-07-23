@@ -28,5 +28,5 @@ jobs:
       #     git push
           
         
-remember to set permissions for the repo to allow write access for the actions user
-this will run a python script and push back to the repo
+# remember to set permissions for the repo to allow write access for the actions user
+# this will run a python script and push back to the repo
